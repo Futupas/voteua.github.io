@@ -1,0 +1,70 @@
+﻿body {
+    background-color: #0000ff;
+    overflow: hidden;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#header{
+    background-color: #83d3ff;
+    margin: 5px;
+    border-radius: 5px;
+}
+#content{
+    background-color: #ffffff;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+div.votediv{
+    border: 2px solid #0000ff;
+    border-radius: 5px;
+    padding: 10px;
+}
+div.votediv > hr{
+    border-top: 2px solid #0000ff;
+    margin: 5px 20px 5px 20px;
+}
+
+button.btn.active.vote-select{
+    background-color: #d4d4d4;
+}
+button.btn.active.vote-select:hover,
+button.btn.active.vote-select:active,
+button.btn.active.vote-select:hover{
+    background-color: #e6e6e6;
+}
+
+button.btn.vote-select{
+    background-color: #ffffff;
+}
+button.btn.vote-select:hover,
+button.btn.vote-select:active,
+button.btn.vote-select:hover{
+    background-color: #e6e6e6;
+}
+
+
+
+button.btn.active.vote-answer{
+    background-color: #d4d4d4;
+}
+button.btn.active.vote-answer:hover,
+button.btn.active.vote-answer:active,
+button.btn.active.vote-answer:hover{
+    background-color: #e6e6e6;
+}
+
+button.btn.vote-answer{
+    background-color: #ffffff;
+}
+button.btn.vote-answer:hover,
+button.btn.vote-answer:active,
+button.btn.vote-answer:hover{
+    background-color: #e6e6e6;
+}
+
+

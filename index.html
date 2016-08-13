@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="App">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- STYLES -->
+    <link href="/Content/Libraries/Bootstrap/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+
+    <link href="/Content/css/styles.css" rel="stylesheet" />
+    <!-- / STYLES -->
+
+    <link rel="shortcut icon" href="/Content/media/img/logos/favicon.ico" />
+    <title>VoteUA - Vote now for free!</title>
+</head>
+<body>
+    <header id="header">
+        <a href="/">
+            <img src="/Content/media/img/logos/logo.png" width="50" height="50" />
+        </a>
+        <div style="float: right;">
+            <a href="/add" class="btn btn-primary" style="height: 40px; margin: 5px; line-height: 40px; padding: 0px 12px;">
+                Add
+            </a>
+            <a href="/manage" class="btn btn-primary" style="height: 40px; margin: 5px; line-height: 40px; padding: 0px 12px;">
+                Manage
+            </a>
+        </div>
+    </header>
+    <div id="content" ng-controller="MainCtrl">
+        <div class="col-md-4">
+            <div class="votediv" style="margin-top: 20px;">
+                <div style="text-align: center;">
+                    <h2>
+                        Голосування:
+                    </h2>
+                </div>
+                <hr />
+                <div style="text-align: center;">
+                    <div ng-repeat="vote in data.votes">
+                        <span ng-if="currentvoteindex == $index">
+                            <button ng-click="showVote($index)" class="btn vote-select active" style="width: 100%;" data-vote-select="{{$index}}">
+                                {{vote.name}}
+                            </button>
+                        </span>
+                        <span ng-if="currentvoteindex !== $index">
+                            <button ng-click="showVote($index)" class="btn vote-select" style="width: 100%;" data-vote-select="{{$index}}">
+                                {{vote.name}}
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div style="margin-top: 20px;" ng-if="selectedanyvote">
+                <div class="votediv">
+                    <div style="text-align: center;">
+                        <h1>{{name}}</h1>
+                        <h4>(#{{nick}})</h4>
+                    </div>
+                    <hr />
+                    <h3>{{question}}</h3>
+                    <hr />
+                    <div style="text-align: center;">
+                        <span ng-repeat="answ in answers">
+                            <span ng-if="activeAnsw == $index">
+                                <button class="btn vote-answer active" ng-click="VoteClick($index)">{{answ.name}}</button>
+                            </span>
+                            <span ng-if="activeAnsw !== $index">
+                                <button class="btn vote-answer" ng-click="VoteClick($index)">{{answ.name}}</button>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/Content/Libraries/jQuery/jquery.js"></script>
+    <script src="/Content/Libraries/Bootstrap/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="/Content/Libraries/AngularJS/angular-1.5.8/angular.js"></script>
+    <script src="/Content/Libraries/jQuery/jquery.nicescroll.js"></script>
+    <script src="/Content/Libraries/jQuery/jquery.cookie.js"></script>
+
+    <script src="/Content/Libraries/Firebase/firebase.js"></script>
+    <script src="/Content/Libraries/Firebase/angularfire.min.js"></script>
+
+    <script src="/Index/Content/js/view.js"></script>
+    <script src="/Index/Content/js/app.js"></script>
+    <!-- / SCRIPTS -->
+</body>
+</html>

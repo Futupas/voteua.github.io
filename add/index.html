@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="App">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- STYLES -->
+    <link href="/Content/Libraries/Bootstrap/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+
+    <link href="./Content/css/styles.css" rel="stylesheet" />
+    <!-- / STYLES -->
+
+    <link rel="shortcut icon" href="/Content/media/img/logos/favicon.ico" />
+    <title>VoteUA - Add vote</title>
+</head>
+<body ng-controller="AddVoteCtrl">
+    <!-- Modal -->
+    <div class="modal fade" id="confirmAddingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    Add your question (#{{vote.nick}})?<br />
+                    <input type="password" ng-model="modelpasswordconfirm" class="form-control" placeholder="Password" value="" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="ConfirmAdd(modelpasswordconfirm)">Add question</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal -->
+
+    <header id="header">
+        <a href="/">
+            <img src="/Content/media/img/logos/logo.png" width="50" height="50" />
+        </a>
+    </header>
+    <div id="content">
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>Your vote's nick</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" ng-model="modelnick" placeholder="Nick" value="" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>Your vote's password</label>
+            </div>
+            <div class="col-md-9">
+                <input type="password" class="form-control" ng-model="modelpassword" placeholder="Password" value="" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>Your vote's name</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" ng-model="modelname" placeholder="Name" value="" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>Your vote's question</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" ng-model="modelquest" placeholder="Question" value="" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>Answers</label>
+            </div>
+            <div class="col-md-9">
+                <div class="col-md-6" style="padding-left: 0px;">
+                    <input id="addanswerfield" type="text" class="form-control" ng-model="newansw" placeholder="Answer" value="" ng-keypress="($event.charCode==13) ? AddAnswer(newansw) : return" />
+                    <button class="btn btn-default" ng-click="AddAnswer(newansw)">Add</button>
+                </div>
+                <div class="col-md-6">
+                    <span ng-repeat="answ in vote.answers">
+                        <!--<button ng-click="DeleteAnswer($index)">
+                            X
+                        </button>-->
+                        <button type="button" class="close" aria-label="Close" ng-click="DeleteAnswer($index)" style="float: none; height: 10px;"><span aria-hidden="true" style="height: 10px;">&times;</span></button>
+                        <span style="font-size: 20px;">{{answ.name}}</span>
+                        <br />
+                    </span>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div>
+            <button class="btn btn-primary btn-lg" ng-click="AddQuestion(modelnick, modelpassword, modelname, modelquest)">
+                Add Question
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/Content/Libraries/jQuery/jquery.js"></script>
+    <script src="/Content/Libraries/Bootstrap/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="/Content/Libraries/AngularJS/angular-1.5.8/angular.js"></script>
+    <script src="/Content/Libraries/jQuery/jquery.nicescroll.js"></script>
+    <script src="/Content/Libraries/jQuery/jquery.cookie.js"></script>
+
+    <script src="/Content/Libraries/Firebase/firebase.js"></script>
+    <script src="/Content/Libraries/Firebase/angularfire.min.js"></script>
+
+    <script src="./Content/js/view.js"></script>
+    <script src="./Content/js/app.js"></script>
+    <!-- / SCRIPTS -->
+</body>
+</html>

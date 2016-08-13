@@ -1,0 +1,32 @@
+{
+	"votes": [{
+			"owner": "Alex",
+			"password": "password",
+			"nick": "vote1",
+			"name": "Vote #1",
+			"question": "my first vote?",
+			"answers": [{
+				"name": "Yes",
+				"count": 0
+				},{
+				"name": "No",
+				"count": 0
+				}
+			]
+		},{
+			"owner": "Alex",
+			"password": "password",
+			"nick": "vote2",
+			"name": "Vote #2",
+			"question": "my second vote?",
+			"answers": [{
+				"name": "Yes",
+				"count": 0
+				},{
+				"name": "No",
+				"count": 0
+				}
+			]
+		}
+	]
+}

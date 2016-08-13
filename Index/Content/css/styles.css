@@ -1,0 +1,33 @@
+﻿body {
+    background-color: #0000ff;
+    overflow: hidden;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#header{
+    background-color: #83d3ff;
+    margin: 5px;
+    border-radius: 5px;
+}
+#content{
+    background-color: #ffffff;
+    margin: 5px;
+    border-radius: 5px;
+}
+#playbutton{
+    background-color: none;
+    margin: 5px;
+    border-radius: 5px;
+    position: absolute;
+    padding: 0px;
+}
+
+.playref{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
