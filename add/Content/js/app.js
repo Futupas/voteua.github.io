@@ -37,17 +37,15 @@ app.controller('AddVoteCtrl', function ($rootScope, $scope, $firebaseObject) {
         $scope.vote.password = password;
         $scope.vote.name = name;
         $scope.vote.question = question;
-        //console.log($scope.vote);
+
         $('#confirmAddingModal').modal('show');
     }
     $scope.ConfirmAdd = function (password) {
         if (password == $scope.vote.password) {
-            console.log($scope.vote);
-            console.log($rootScope.data.votes);
             $rootScope.data.votes.push($scope.vote);
-            console.log($rootScope.data.votes);
+            //console.log('Adding was successesful!');
             $('#confirmAddingModal').modal('hide');
-            window.location = '/';
+            setTimeout(function () { window.location = '/'; }, 500);
         } else {
             $('#confirmAddingModal').modal('hide');
             alert('password is incorrect!');

@@ -1,29 +1,24 @@
 {
 	"votes": [{
 			"owner": "Alex",
-			"password": "password",
-			"nick": "vote1",
-			"name": "Vote #1",
-			"question": "my first vote?",
+			"password": "alexpassword",
+			"nick": "admin_vote",
+			"name": "Про сайт",
+			"question": "Как вам этот сайт?",
 			"answers": [{
-				"name": "Yes",
+				"name": "Отлично",
 				"count": 0
 				},{
-				"name": "No",
-				"count": 0
-				}
-			]
-		},{
-			"owner": "Alex",
-			"password": "password",
-			"nick": "vote2",
-			"name": "Vote #2",
-			"question": "my second vote?",
-			"answers": [{
-				"name": "Yes",
+				"name": "Хорошо",
 				"count": 0
 				},{
-				"name": "No",
+				"name": "Средне",
+				"count": 0
+				},{
+				"name": "Плохо",
+				"count": 0
+				},{
+				"name": "Ужасно",
 				"count": 0
 				}
 			]
