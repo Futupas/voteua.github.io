@@ -10,6 +10,7 @@
 
     <link rel="shortcut icon" href="/Content/media/img/logos/favicon.ico" />
     <title>VoteUA - Add vote</title>
+    <base href="/add/">
 </head>
 <body ng-controller="AddVoteCtrl">
     <!-- Modal -->
@@ -39,6 +40,12 @@
         </a>
     </header>
     <div id="content">
+        <div ng-view>
+
+        </div>
+        <ng-view>
+
+        </ng-view>
         <div class="form-group row">
             <div class="col-md-3">
                 <label>Your vote's nick</label>
@@ -104,6 +111,7 @@
     <script src="/Content/Libraries/jQuery/jquery.js"></script>
     <script src="/Content/Libraries/Bootstrap/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="/Content/Libraries/AngularJS/angular-1.5.8/angular.js"></script>
+    <script src="/Content/Libraries/AngularJS/angular-1.5.8/angular-route.js"></script>
     <script src="/Content/Libraries/jQuery/jquery.nicescroll.js"></script>
     <script src="/Content/Libraries/jQuery/jquery.cookie.js"></script>
 
