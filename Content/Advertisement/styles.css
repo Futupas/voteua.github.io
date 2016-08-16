@@ -1,2 +1,10 @@
 ﻿body {
+    margin: 0px;
+    padding: 0px;
+    height: 350px;
+    padding: 25px;
+}
+body img{
+    max-width: 300px;
+    max-height: 300px;
 }
