@@ -43,7 +43,7 @@ app.controller('AddVoteCtrl', function ($rootScope, $scope, $firebaseObject) {
     }
     $scope.ConfirmAdd = function (password) {
         if (password == $scope.vote.password) {
-            $rootScope.data.votes.push($scope.vote);
+            $rootScope.data.votes.unshift($scope.vote);
             //console.log('Adding was successesful!');
             $('#confirmAddingModal').modal('hide');
             setTimeout(function () { window.location = '/'; }, 500);
