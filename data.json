@@ -22,6 +22,40 @@
 				"count": 0
 				}
 			]
+		},{
+			"owner": "No Alex",
+			"password": "password",
+			"nick": "vote1",
+			"name": "Vote 1",
+			"question": "Yes or no?",
+			"answers": [{
+				"name": "Yes",
+				"count": 0
+				},{
+				"name": "No",
+				"count": 0
+				},{
+				"name": "I don't know",
+				"count": 0
+				}
+			]
+		},{
+			"owner": "No Alex",
+			"password": "password",
+			"nick": "vote2",
+			"name": "Vote 2",
+			"question": "Yes or no?",
+			"answers": [{
+				"name": "Yes",
+				"count": 0
+				},{
+				"name": "No",
+				"count": 0
+				},{
+				"name": "I don't know",
+				"count": 0
+				}
+			]
 		}
 	]
 }
