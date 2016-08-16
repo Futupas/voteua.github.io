@@ -10,8 +10,6 @@
 
     <link rel="shortcut icon" href="/Content/media/img/logos/favicon.ico" />
     <title>VoteUA - Vote now for free!</title>
-
-    <base href="/" />
 </head>
 <body>
     <header id="header">
@@ -39,12 +37,12 @@
                 <div style="text-align: center;">
                     <div ng-repeat="vote in data.votes">
                         <span ng-if="currentvotename == vote.nick">
-                            <button ng-click="showVote(vote.nick)" class="btn vote-select active" style="width: 100%;" data-vote-select="{{$index}}">
+                            <button ng-click="showVote(vote.nick)" class="btn vote-select active" style="width: 100%;">
                                 {{vote.name}}
                             </button>
                         </span>
                         <span ng-if="currentvotename !== vote.nick">
-                            <button ng-click="showVote(vote.nick)" class="btn vote-select" style="width: 100%;" data-vote-select="{{$index}}">
+                            <button ng-click="showVote(vote.nick)" class="btn vote-select" style="width: 100%;">
                                 {{vote.name}}
                             </button>
                         </span>
@@ -73,6 +71,9 @@
                         </span>
                     </div>
                 </div>
+            </div>
+            <div style="margin-top: 20px; max-width: 100%;" ng-if="selectedanyvote !== true">
+                <iframe id="adframe" scrolling="auto" width="100%" height="500px;" style="border: 0px; margin: 0px;"></iframe>
             </div>
         </div>
     </div>

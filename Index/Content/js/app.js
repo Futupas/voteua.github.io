@@ -13,6 +13,7 @@ app.run(function ($rootScope, $firebaseObject) {
     //    $rootScope.$apply();
     //});
     obj.$loaded(function () {
+        $('#adframe').attr('src', $rootScope.data.adsrc);
         $rootScope.SetVoteOnPage(location.hash, true);
     });
 });
@@ -90,6 +91,13 @@ app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {
             }
 
             $rootScope.$apply();
+            $scope.$apply();
+        } else {
+            $scope.selectedanyvote = false;
+            $scope.currentvotename = null;
+            $rootScope.$apply();
+            $('#adframe').attr('src', $rootScope.data.adsrc);
+
             $scope.$apply();
         }
     }
