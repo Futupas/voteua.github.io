@@ -10,6 +10,8 @@
 
     <link rel="shortcut icon" href="/Content/media/img/logos/favicon.ico" />
     <title>VoteUA - Vote now for free!</title>
+
+    <base href="/" />
 </head>
 <body>
     <header id="header">
@@ -36,14 +38,16 @@
                 <hr />
                 <div style="text-align: center;">
                     <div ng-repeat="vote in data.votes">
-                        <span ng-if="currentvoteindex == $index">
-                            <button ng-click="showVote($index)" class="btn vote-select active" style="width: 100%;" data-vote-select="{{$index}}">
+                        <span ng-if="currentvotename == vote.nick">
+                            <button ng-click="showVote(vote.nick)" class="btn vote-select active" style="width: 100%;" data-vote-select="{{$index}}">
                                 {{vote.name}}
                             </button>
                         </span>
-                        <span ng-if="currentvoteindex !== $index">
-                            <button ng-click="showVote($index)" class="btn vote-select" style="width: 100%;" data-vote-select="{{$index}}">
-                                {{vote.name}}
+                        <span ng-if="currentvotename !== vote.nick">
+                            <button ng-click="showVote(vote.nick)" class="btn vote-select" style="width: 100%;" data-vote-select="{{$index}}">
+                                {{vote.name}}<br />
+                                {{vote.nick}} -
+                                {{currentvotename}}
                             </button>
                         </span>
                     </div>
@@ -54,14 +58,14 @@
             <div style="margin-top: 20px;" ng-if="selectedanyvote">
                 <div class="votediv">
                     <div style="text-align: center;">
-                        <h1>{{name}}</h1>
-                        <h4>(#{{nick}})</h4>
+                        <h1>{{currentvote.name}}</h1>
+                        <h4>(#{{currentvote.nick}})</h4>
                     </div>
                     <hr />
-                    <h3>{{question}}</h3>
+                    <h3>{{currentvote.question}}</h3>
                     <hr />
                     <div style="text-align: center;">
-                        <span ng-repeat="answ in answers">
+                        <span ng-repeat="answ in currentvote.answers">
                             <span ng-if="activeAnsw == $index">
                                 <button class="btn vote-answer active" ng-click="VoteClick($index)">{{answ.name}}</button>
                             </span>
@@ -79,6 +83,7 @@
     <script src="/Content/Libraries/jQuery/jquery.js"></script>
     <script src="/Content/Libraries/Bootstrap/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="/Content/Libraries/AngularJS/angular-1.5.8/angular.js"></script>
+    <script src="/Content/Libraries/AngularJS/angular-1.5.8/angular-route.js"></script>
     <script src="/Content/Libraries/jQuery/jquery.nicescroll.js"></script>
     <script src="/Content/Libraries/jQuery/jquery.cookie.js"></script>
 

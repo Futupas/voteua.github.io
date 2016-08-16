@@ -1,24 +1,5 @@
-﻿var app = angular.module('App', ['firebase', 'ngRoute']);
+﻿var app = angular.module('App', ['firebase']);
 
-app.config(function ($routeProvider, $locationProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl: "main.html"
-    })
-    .when("/red", {
-        templateUrl: "red.html"
-    })
-    .when("/green", {
-        templateUrl: "green.html"
-    })
-    .when("/blue", {
-        templateUrl: "blue.html"
-    })
-    .otherwise({
-        template: "<h1>Other</h1>"
-    });
-    $locationProvider.html5Mode(true);
-});
 
 app.run(function ($rootScope, $firebaseObject) {
     console.log('--App.run');
