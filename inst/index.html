@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="App">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- STYLES -->
+    <link href="/Content/Libraries/Bootstrap/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+
+    <link href="/Content/css/styles.css" rel="stylesheet" />
+    <!-- / STYLES -->
+
+    <link rel="shortcut icon" href="/Content/media/img/logos/favicon.ico" />
+    <title>VoteUA - Vote now for free!</title>
+</head>
+<body ng-controller="MainCtrl">
+    <header id="header">
+        <a href="/">
+            <img src="/Content/media/img/logos/logo.png" width="50" height="50" />
+        </a>
+        <div style="float: right;">
+            <a href="/" class="btn btn-primary" style="height: 40px; margin: 5px; line-height: 40px; padding: 0px 12px;">
+                На головну
+            </a>
+        </div>
+    </header>
+    <div id="content" style="padding: 10px;" ng-controller="MainCtrl">
+        <div>
+            <center>
+                <div class="btn-group" role="group">
+                    <button id="SetEngLang" class="btn btn-success active" ng-click="SetEngLang()">English</button>
+                    <button id="SetUrkLang" class="btn btn-success" ng-click="SetUkrLang()">Українська</button>
+                </div>
+            </center>  
+        </div>
+        <ng-include src="inst_lang">
+
+        </ng-include>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/Content/Libraries/jQuery/jquery.js"></script>
+    <script src="/Content/Libraries/Bootstrap/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../Content/Libraries/AngularJS/angular-1.5.8/angular.min.js"></script>
+    <script src="/Content/Libraries/jQuery/jquery.nicescroll.js"></script>
+    <script src="/Content/Libraries/jQuery/jquery.cookie.js"></script>
+
+    <script src="./Content/js/view.js"></script>
+    <script src="./Content/js/app.js"></script>
+    <!-- / SCRIPTS -->
+</body>
+</html>\
