@@ -4,7 +4,7 @@ var obj;
 
 app.run(function ($rootScope, $firebaseObject) {
     console.log('--App.run');
-    var ref = new Firebase("https://voteua-d239d.firebaseio.com");
+    var ref = new Firebase("https://voteua-7b7a3.firebaseio.com/");
     //$rootScope.data = { votes: [{ answers: [{}] }] };
     $rootScope.data = {};
     obj = $firebaseObject(ref);

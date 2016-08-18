@@ -3,7 +3,7 @@
 
 app.run(function ($rootScope, $firebaseObject) {
     console.log('--App.run');
-    var ref = new Firebase("https://voteua-d239d.firebaseio.com");
+    var ref = new Firebase("https://voteua-7b7a3.firebaseio.com/");
     //$rootScope.data = { votes: [{ answers: [{}] }] };
     $rootScope.data = {};
     var obj = $firebaseObject(ref);
@@ -43,14 +43,28 @@ app.controller('AddVoteCtrl', function ($rootScope, $scope, $firebaseObject) {
     }
     $scope.ConfirmAdd = function (password) {
         if (password == $scope.vote.password) {
-            $rootScope.data.votes.unshift($scope.vote);
-            //console.log('Adding was successesful!');
-            $('#confirmAddingModal').modal('hide');
-            setTimeout(function () { window.location = '/'; }, 500);
+            if (AvailableNick($scope.vote.nick)) {
+                $rootScope.data.votes.unshift($scope.vote);
+                //console.log('Adding was successesful!');
+                $('#confirmAddingModal').modal('hide');
+                setTimeout(function () { window.location = '/'; }, 500);
+            } else {
+                $('#confirmAddingModal').modal('hide');
+                alert('Nick is not available!');
+            }
         } else {
             $('#confirmAddingModal').modal('hide');
             alert('password is incorrect!');
         }
+    }
+    function AvailableNick(nick) {
+        var av = true;
+        for (var i = 0; i < $rootScope.data.votes.length; i++) {
+            if ($rootScope.data.votes[i].nick == nick) {
+                av = false;
+            }
+        }
+        return av
     }
 });
 
